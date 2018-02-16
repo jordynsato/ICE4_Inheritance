@@ -1,18 +1,20 @@
-
-public abstract MovieTicket implements Sellable{
+/**
+ * Last edited: 3:18 pm
+ * @author Team Taro
+ **/
+public abstract class MovieTicket implements Sellable{
         
-        private int inventory;
+        private Inventory inv;
         private String movie;
-        private static final int MAX_INVENTORY = 50;
         
         public MovieTicket() {
-                inventory = 0;
+                inv = new Inventory();
                 movie = "";
         }
         
         public MovieTicket(String movie) {
                 this.movie = movie;
-                inventory = MAX_INVENTORY;
+                inv = new Inventory();
         }
         
         public String getMovieName() {
@@ -23,7 +25,5 @@ public abstract MovieTicket implements Sellable{
                 movie = newMovie;
         }
         
-        public abstract refundTicket(int numTickets);
-        
-        public abstract sellTIcket(int numTickets);
+        public abstract double calculatePrice(int numTickets);
 }
