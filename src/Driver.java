@@ -3,20 +3,20 @@ import java.util.Scanner;
 /**
  * This class takes in user input to find how many tickets a person wants to purchase for a movie.
  * 
- * Last update: 2/16/18 at 2: PM
+ * Last update: 2/16/18 at 4: PM
  * @author Team Matcha: Serena Ing, Nana Mimura, Jordyn Sato
  */
 public class Driver {
 
 	//Fields
-	private static MovieTicket bp = new MovieTicket();
-	private static MovieTicket gs = new MovieTicket();
-	private static MovieTicket j = new MovieTicket();
+	private static Inventory bp = new Inventory();
+	private static Inventory gs = new Inventory();
+	private static Inventory j = new Inventory();
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		boolean rerunFlag = true;
-		System.out.println("Welcome to Matcha Cinemas!");
+		System.out.println("Welcome to Matcha Movies!");
 		
 		do {
 			//Gets the user option to buy or refund a ticket
@@ -64,19 +64,57 @@ public class Driver {
 				}
 			} while(rerunMovie);
 			
-			//When the user wants to buy a ticket
+			//Checks if user wants to buy or return a ticket
+			String opt;
 			if(option == 1) {
-				System.out.println("What type of ticket would you like to buy?");
-				
+				opt = "buy";
 			}
-			//When the user wants to return a ticket
 			else {
-				System.out.println("What type of ticket are you returning?");
-				
+				opt = "return";
 			}
 			
+			//Checks the type of ticket
+			boolean rerunType = true;
+			int ticketType = 0;
+			do {
+				try {
+					System.out.printf("What kind of ticket would you like to %s?\n", opt);
+					System.out.println("Adult Ticket(1), Senior Ticket(2), Student Ticket(3)");
+					if(scan.hasNextLine()) {
+						ticketType = scan.nextInt();
+						if(ticketType != 1 && ticketType != 2 && ticketType != 3) {
+							System.out.println("Please choose a valid ticket option.");
+							scan.nextLine();
+							continue;
+						}
+						rerunType = false;
+					}
+				} catch(Exception e) {
+					System.out.println("Please enter in a valid option.");
+					scan.nextLine();
+					continue;
+				}
+			} while(rerunType);
+			
+			//Gets the quantity of tickets
+			boolean rerunNum = true;
+			int num = 0;
+			do {
+				System.out.println("Please enter the quantity.");
+				try {
+					if(scan.hasNextLine()) {
+						num = scan.nextInt();
+					}
+					rerunNum = false;
+				} catch(Exception e) {
+					System.out.println("Please enter in a valid quantity.");
+					scan.nextLine();
+					continue;
+				}
+			} while(rerunNum);
+			
 			//Checks to see if the user wants to rerun the program
-			System.out.println("Would you like to rerun the program?");
+			System.out.println("Would you like to rerun the program? (Y/N)");
 			String response = scan.next();
 			if(!response.equalsIgnoreCase("Y") && !response.equalsIgnoreCase("YES")) {
 				rerunFlag = false;
@@ -85,7 +123,5 @@ public class Driver {
 			scan.nextLine();
 		} while(rerunFlag);
 		scan.close();
-		System.out.println("End program");
 	}
-
 }
