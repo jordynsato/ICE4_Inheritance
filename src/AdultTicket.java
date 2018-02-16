@@ -14,6 +14,9 @@ public class AdultTicket extends MovieTicket implements Sellable{
 	public double getPrice() {
 		return price;
 	}
+	public void setPrice(double p) {
+		price = p;
+	}
 	
 	@Override public double calculatePrice(int quantity) {
 		return quantity * price;
