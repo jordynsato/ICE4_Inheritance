@@ -1,4 +1,4 @@
 
 public interface Sellable {
-        double calculatePrice(int quantity, double price);
+        double calculatePrice(int quantity);
 }

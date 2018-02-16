@@ -25,5 +25,5 @@ public abstract class MovieTicket implements Sellable{
                 movie = newMovie;
         }
         
-        public abstract calculatePrice(int numTickets);
+        public abstract double calculatePrice(int numTickets);
 }
