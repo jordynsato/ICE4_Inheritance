@@ -23,7 +23,7 @@ public abstract MovieTicket implements Sellable{
                 movie = newMovie;
         }
         
-        public abstract refundTicket(int numTickets, double ticketPrice);
+        public abstract refundTicket(int numTickets);
         
         public abstract sellTIcket(int numTickets);
 }
