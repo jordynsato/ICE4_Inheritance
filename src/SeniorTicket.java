@@ -1,4 +1,4 @@
 
-public class SeniorTicket {
-
+public class SeniorTicket extends AdultTicket {
+        
 }
