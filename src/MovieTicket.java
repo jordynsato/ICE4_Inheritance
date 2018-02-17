@@ -4,17 +4,17 @@
  */
 public abstract class MovieTicket implements Sellable{
         
-        private Inventory inv;
+        //private Inventory inv;
         private String movie;
         
         public MovieTicket() {
-                inv = new Inventory();
+                //inv = new Inventory();
                 movie = "";
         }
         
         public MovieTicket(String movie) {
                 this.movie = movie;
-                inv = new Inventory();
+                //inv = new Inventory();
         }
         
         public String getMovieName() {

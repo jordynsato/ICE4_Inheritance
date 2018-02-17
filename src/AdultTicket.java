@@ -4,7 +4,7 @@
  * 2/16/18
  *
  */
-public class AdultTicket extends MovieTicket implements Sellable{
+public class AdultTicket extends MovieTicket implements Sellable {
         private double price;
         
         public AdultTicket() {
@@ -14,9 +14,11 @@ public class AdultTicket extends MovieTicket implements Sellable{
         public double getPrice() {
                 return price;
         }
+        public void setPrice(double p) {
+                price = p;
+        }
         
         @Override public double calculatePrice(int quantity) {
                 return quantity * price;
         }
-        
 }
