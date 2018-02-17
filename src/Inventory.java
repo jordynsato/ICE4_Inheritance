@@ -12,7 +12,7 @@ public class Inventory {
                 //moneyMade = 0;
         }
         
-        public void refundTicket(int numOfTickets, MovieTicket t) throws Exception {
+        public void refundTicket(int numOfTickets) throws Exception {
                 if (remainingTickets+numOfTickets>50) {
                         throw new Exception();
                 }
@@ -24,7 +24,8 @@ public class Inventory {
                 }
         }
         
-        public void sellTicket(int numOfTickets, MovieTicket t) throws Exception {
+
+        public void sellTicket(int numOfTickets) throws Exception {
                 if(remainingTickets-numOfTickets<0)
                         throw new Exception();
                 //System.out.println("Error, please try again");

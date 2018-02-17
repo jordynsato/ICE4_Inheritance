@@ -17,7 +17,6 @@ public class Driver {
 		Scanner scan = new Scanner(System.in);
 		boolean rerunFlag = true;
 		System.out.println("Welcome to Matcha Movies!");
-		AdultTicket t = new AdultTicket();
 		do {
 			//Gets the user option to buy or refund a ticket
 			boolean rerunOpt = true;
@@ -119,26 +118,26 @@ public class Driver {
 					case 1:
 						switch(movie) {
 							case 1:
-								bp.sellTicket(num, t);
+								bp.sellTicket(num);
 								break;
 							case 2:
-								gs.sellTicket(num, t);
+								gs.sellTicket(num);
 								break;
 							case 3:
-								j.sellTicket(num, t);
+								j.sellTicket(num);
 								break;
 						}
 						break;
 					case 2:
 						switch(movie) {
 							case 1:
-								bp.refundTicket(num, t);
+								bp.refundTicket(num);
 								break;
 							case 2:
-								gs.refundTicket(num, t);
+								gs.refundTicket(num);
 								break;
 							case 3:
-								j.sellTicket(num, t);
+								j.sellTicket(num);
 								break;
 						}
 						
