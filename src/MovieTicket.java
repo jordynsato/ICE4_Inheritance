@@ -1,7 +1,7 @@
 /**
- * Last edited: 3:18 pm
- * @author Team Taro
- **/
+ * Last edited: 2/16/18 3:18 pm
+ * @author Team Matcha
+ */
 public abstract class MovieTicket implements Sellable{
         
         private Inventory inv;
