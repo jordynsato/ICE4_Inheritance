@@ -1,16 +1,11 @@
 
-public class SeniorTicket extends AdultTicket implements Sellable{
-	private double price;
-	
-	public SeniorTicket() {
-		price = 10.00;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-	
-	@Override public double calculatePrice(int quantity) {
-		return quantity * price;
-	}
+public class SeniorTicket extends AdultTicket implements Sellable {
+        
+        public SeniorTicket() {
+                setTicketPrice(10.00);
+        }
+        
+        public double calculatePrice(int numTickets) {
+                return getTicketPrice() * numTickets;
+        }
 }
