@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * This class takes in user input to find how many tickets a person wants to purchase for a movie.
  * 
- * Last update: 2/16/18 at 4: PM
+ * Last update: 2/16/18 at 3:48 PM
  * @author Team Matcha: Serena Ing, Nana Mimura, Jordyn Sato
  */
 public class Driver {
