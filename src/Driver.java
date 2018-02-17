@@ -113,6 +113,40 @@ public class Driver {
 				}
 			} while(rerunNum);
 			
+			//Buys or refunds the tickets
+			try {
+				switch(option) {
+					case 1:
+						switch(movie) {
+							case 1:
+								bp.sellTicket(num);
+								break;
+							case 2:
+								gs.sellTicket(num);
+								break;
+							case 3:
+								j.sellTicket(num);
+								break;
+						}
+						break;
+					case 2:
+						switch(movie) {
+							case 1:
+								bp.refundTicket(num);
+								break;
+							case 2:
+								gs.refundTicket(num);
+								break;
+							case 3:
+								j.sellTicket(num);
+								break;
+						}
+						
+				}
+			} catch(Exception e) {
+				System.out.printf("Unable to %s that many tickets.", opt);
+			}
+			
 			//Checks to see if the user wants to rerun the program
 			System.out.println("Would you like to rerun the program? (Y/N)");
 			String response = scan.next();
