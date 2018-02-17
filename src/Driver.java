@@ -17,7 +17,6 @@ public class Driver {
 		Scanner scan = new Scanner(System.in);
 		boolean rerunFlag = true;
 		System.out.println("Welcome to Matcha Movies!");
-		
 		do {
 			//Gets the user option to buy or refund a ticket
 			boolean rerunOpt = true;
@@ -112,6 +111,40 @@ public class Driver {
 					continue;
 				}
 			} while(rerunNum);
+			
+			//Buys or refunds the tickets
+			try {
+				switch(option) {
+					case 1:
+						switch(movie) {
+							case 1:
+								bp.sellTicket(num);
+								break;
+							case 2:
+								gs.sellTicket(num);
+								break;
+							case 3:
+								j.sellTicket(num);
+								break;
+						}
+						break;
+					case 2:
+						switch(movie) {
+							case 1:
+								bp.refundTicket(num);
+								break;
+							case 2:
+								gs.refundTicket(num);
+								break;
+							case 3:
+								j.sellTicket(num);
+								break;
+						}
+						
+				}
+			} catch(Exception e) {
+				System.out.printf("Unable to %s that many tickets.\n", opt);
+			}
 			
 			//Checks to see if the user wants to rerun the program
 			System.out.println("Would you like to rerun the program? (Y/N)");
