@@ -12,7 +12,7 @@ public class Inventory {
                 //moneyMade = 0;
         }
         
-        public void refundTicket(int numOfTickets, MovieTicket t) throws RuntimeException {
+        public void refundTicket(int numOfTickets) throws RuntimeException {
                 if (remainingTickets+numOfTickets>50) {
                         throw new RuntimeException();
                 }
@@ -24,7 +24,7 @@ public class Inventory {
                 }
         }
         
-        public void sellTicket(int numOfTickets, MovieTicket t) throws RuntimeException {
+        public void sellTicket(int numOfTickets) throws RuntimeException {
                 if(remainingTickets-numOfTickets<0)
                         throw new RuntimeException();
                 //System.out.println("Error, please try again");
