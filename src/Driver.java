@@ -169,11 +169,11 @@ public class Driver {
 				rerunFlag = false;
 				//Prints out the results of the day
 				System.out.println("Here are the number of tickets sold for each movie:");
-				System.out.printf("Black Panther:\n\tAdult Tickets: %d\n\tSeniorTickets: %d\n\tStudentTickets: %d\n",
+				System.out.printf("Black Panther:\n\tAdult Tickets: %d\n\tSenior Tickets: %d\n\tStudent Tickets: %d\n",
 						bp.getAdultTixSold(), bp.getSeniorTixSold(), bp.getStudentTixSold());
-				System.out.printf("The Greatest Showman:\n\tAdult Tickets: %d\n\tSeniorTickets: %d\n\tStudentTickets: %d\n",
+				System.out.printf("The Greatest Showman:\n\tAdult Tickets: %d\n\tSenior Tickets: %d\n\tStudent Tickets: %d\n",
 						gs.getAdultTixSold(), gs.getSeniorTixSold(), gs.getStudentTixSold());
-				System.out.printf("Jumanji:\n\tAdult Tickets: %d\n\tSeniorTickets: %d\n\tStudentTickets: %d\n",
+				System.out.printf("Jumanji:\n\tAdult Tickets: %d\n\tSenior Tickets: %d\n\tStudent Tickets: %d\n",
 						j.getAdultTixSold(), j.getSeniorTixSold(), j.getStudentTixSold());
 				System.out.println("Thank you for using this program!");
 			}
