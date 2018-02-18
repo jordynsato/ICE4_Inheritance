@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * This class takes in user input to find how many tickets a person wants to purchase for a movie.
  * 
- * Last update: 2/16/18 at 3:48 PM
+ * Last update: 2/17/18 at 4:35 PM
  * @author Team Matcha: Serena Ing, Nana Mimura, Jordyn Sato
  */
 public class Driver {
@@ -75,6 +75,7 @@ public class Driver {
 			//Checks the type of ticket
 			boolean rerunType = true;
 			int ticketType = 0;
+			MovieTicket m;
 			do {
 				try {
 					System.out.printf("What kind of ticket would you like to %s?\n", opt);
@@ -112,32 +113,47 @@ public class Driver {
 				}
 			} while(rerunNum);
 			
+			//Determines what type of MovieTicket is bought
+			switch(ticketType) {
+				case 1:
+					m = new AdultTicket();
+					break;
+				case 2:
+					m = new SeniorTicket();
+					break;
+				case 3:
+					m = new StudentTicket();
+					break;
+				default:
+					m = null;
+			}
+			
 			//Buys or refunds the tickets
 			try {
 				switch(option) {
 					case 1:
 						switch(movie) {
 							case 1:
-								bp.sellTicket(num);
+								bp.sellTicket(num, m);
 								break;
 							case 2:
-								gs.sellTicket(num);
+								gs.sellTicket(num, m);
 								break;
 							case 3:
-								j.sellTicket(num);
+								j.sellTicket(num, m);
 								break;
 						}
 						break;
 					case 2:
 						switch(movie) {
 							case 1:
-								bp.refundTicket(num);
+								bp.refundTicket(num, m);
 								break;
 							case 2:
-								gs.refundTicket(num);
+								gs.refundTicket(num, m);
 								break;
 							case 3:
-								j.sellTicket(num);
+								j.refundTicket(num, m);
 								break;
 						}
 						
@@ -151,6 +167,14 @@ public class Driver {
 			String response = scan.next();
 			if(!response.equalsIgnoreCase("Y") && !response.equalsIgnoreCase("YES")) {
 				rerunFlag = false;
+				//Prints out the results of the day
+				System.out.println("Here are the number of tickets sold for each movie:");
+				System.out.printf("Black Panther:\n\tAdult Tickets: %d\n\tSeniorTickets: %d\n\tStudentTickets: %d\n",
+						bp.getAdultTixSold(), bp.getSeniorTixSold(), bp.getStudentTixSold());
+				System.out.printf("The Greatest Showman:\n\tAdult Tickets: %d\n\tSeniorTickets: %d\n\tStudentTickets: %d\n",
+						gs.getAdultTixSold(), gs.getSeniorTixSold(), gs.getStudentTixSold());
+				System.out.printf("Jumanji:\n\tAdult Tickets: %d\n\tSeniorTickets: %d\n\tStudentTickets: %d\n",
+						j.getAdultTixSold(), j.getSeniorTixSold(), j.getStudentTixSold());
 				System.out.println("Thank you for using this program!");
 			}
 			scan.nextLine();
