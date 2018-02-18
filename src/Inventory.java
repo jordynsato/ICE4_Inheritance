@@ -9,7 +9,6 @@ public class Inventory {
 		studentTix = 0;
 		adultTix = 0;
 		seniorTix = 0;
-		//ticketSoldList = new ArrayList<MovieTicket>();
 	}
 
 	public void refundTicket(int numOfTickets, MovieTicket m) throws Exception {

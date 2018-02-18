@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * This class takes in user input to find how many tickets a person wants to purchase for a movie.
  * 
- * Last update: 2/16/18 at 3:48 PM
+ * Last update: 2/17/18 at 4:35 PM
  * @author Team Matcha: Serena Ing, Nana Mimura, Jordyn Sato
  */
 public class Driver {
@@ -113,6 +113,7 @@ public class Driver {
 				}
 			} while(rerunNum);
 			
+			//Determines what type of MovieTicket is bought
 			switch(ticketType) {
 				case 1:
 					m = new AdultTicket();
@@ -166,6 +167,7 @@ public class Driver {
 			String response = scan.next();
 			if(!response.equalsIgnoreCase("Y") && !response.equalsIgnoreCase("YES")) {
 				rerunFlag = false;
+				//Prints out the results of the day
 				System.out.println("Here are the number of tickets sold for each movie:");
 				System.out.printf("Black Panther:\n\tAdult Tickets: %d\n\tSeniorTickets: %d\n\tStudentTickets: %d\n",
 						bp.getAdultTixSold(), bp.getSeniorTixSold(), bp.getStudentTixSold());
